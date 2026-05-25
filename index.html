@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth" data-theme="glassmorphism">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutorial Update iMersFireship V2 — OTP Verification System</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          },
+          colors: {
+            brand: {
+              primary: '#d946ef',
+              secondary: '#3b82f6',
+              background: '#0f172a'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #0b0f19;
+    }
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card-hover:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(217, 70, 239, 0.4);
+      transform: translateY(-2px);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  </style>
+</head>
+<body class="text-slate-100 min-h-screen relative overflow-x-hidden">
+
+  <!-- Glowing Background Blobs (Glassmorphism Theme Elements) -->
+  <div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-pink-500/10 blur-[120px] pointer-events-none" aria-hidden="true"></div>
+  <div class="absolute top-[30%] right-[-10%] w-[600px] h-[600px] rounded-full bg-blue-500/10 blur-[150px] pointer-events-none" aria-hidden="true"></div>
+  <div class="absolute bottom-[10%] left-[20%] w-[500px] h-[500px] rounded-full bg-indigo-500/10 blur-[130px] pointer-events-none" aria-hidden="true"></div>
+
+  <!-- PAGE 1 -->
+  <section class="break-after-page min-h-screen py-8 sm:py-16 flex flex-col justify-between relative z-10" data-block="page">
+    <div class="imers-container mx-auto max-w-[960px] w-full p-4 sm:p-8 flex-grow flex flex-col justify-between" role="document" aria-label="Page 1">
+      
+      <!-- Header Area -->
+      <header class="imers-block mb-10" data-block="header">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/10 pb-6">
+          <div>
+            <span class="bg-pink-500/15 text-pink-300 border border-pink-500/30 px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase inline-flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-pink-500 animate-pulse"></span>
+              Sistem Update
+            </span>
+            <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight mt-3 bg-gradient-to-r from-white via-slate-100 to-pink-400 bg-clip-text text-transparent">
+              Tutorial Update iMersFireship V2
+            </h1>
+            <p class="text-pink-200/80 font-medium text-lg mt-1">
+              — OTP Verification System
+            </p>
+          </div>
+          <div class="flex items-center gap-2 bg-white/5 border border-white/10 p-2.5 rounded-2xl">
+            <div class="p-1.5 bg-pink-500/20 rounded-xl">
+              <svg class="w-6 h-6 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+              </svg>
+            </div>
+            <div class="text-left pr-2">
+              <div class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Engine Version</div>
+              <div class="text-sm font-bold text-white">v2.0.0 (Latest)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Intro Info -->
+        <div class="mt-6 p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/10 flex items-start gap-3.5">
+          <span class="p-2 bg-blue-500/20 text-blue-400 rounded-xl mt-0.5 shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </span>
+          <div>
+            <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+              Ikuti langkah berikut untuk update sistem <span class="text-pink-400 font-semibold">iMersFireship</span> ke versi terbaru yang sudah mendukung:
+            </p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 mt-4">
+              <div class="flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-xs font-medium text-slate-200">
+                <span class="w-2 h-2 rounded-full bg-pink-500"></span> OTP Verification
+              </div>
+              <div class="flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-xs font-medium text-slate-200">
+                <span class="w-2 h-2 rounded-full bg-pink-500"></span> Smart Validation
+              </div>
+              <div class="flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-xs font-medium text-slate-200">
+                <span class="w-2 h-2 rounded-full bg-pink-500"></span> Security Upgrade
+              </div>
+              <div class="flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-xs font-medium text-slate-200">
+                <span class="w-2 h-2 rounded-full bg-pink-500"></span> Update Engine
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content (Steps) -->
+      <main class="imers-block flex-grow space-y-6" data-block="main">
+        
+        <!-- LANGKAH 1 -->
+        <div class="imers-card glass-effect glass-card-hover p-6 rounded-3xl transition-all" data-block="card">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-pink-500 to-pink-600 flex items-center justify-center font-bold text-lg text-white shrink-0 shadow-lg shadow-pink-500/20">
+              1
+            </div>
+            <div class="space-y-3 w-full">
+              <h2 class="text-xl font-bold text-white flex items-center justify-between">
+                <span>LANGKAH 1 — Hapus Library Lama</span>
+                <span class="bg-red-500/10 text-red-400 border border-red-500/20 text-[10px] px-2.5 py-1 rounded-md font-semibold tracking-wider uppercase">Uninstall</span>
+              </h2>
+              <ol class="list-decimal list-inside space-y-2 text-sm text-slate-300 pl-1">
+                <li>Buka <span class="text-slate-100 font-medium">Google Sheets</span> project iMersFireship Anda</li>
+                <li>Klik menu: <span class="text-slate-100 font-medium bg-white/10 px-1.5 py-0.5 rounded">Extensions → Apps Script</span></li>
+                <li>Cari menu <span class="text-slate-100 font-medium">Libraries</span> di sidebar kiri</li>
+                <li>Cari library bernama: <span class="text-pink-300 font-semibold">iMersEngine</span></li>
+                <li>Klik ikon titik tiga (<span class="text-slate-400 font-bold inline-flex items-center justify-center w-5 h-5 bg-white/5 rounded">•••</span>)</li>
+                <li>Pilih: <span class="text-red-400 font-semibold bg-red-500/15 px-2 py-0.5 rounded">Remove</span></li>
+              </ol>
+              
+              <div class="mt-3 flex items-center gap-2 text-xs text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 p-2.5 rounded-xl">
+                <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>Library lama berhasil dihapus</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- LANGKAH 2 -->
+        <div class="imers-card glass-effect glass-card-hover p-6 rounded-3xl transition-all" data-block="card">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-pink-500 to-pink-600 flex items-center justify-center font-bold text-lg text-white shrink-0 shadow-lg shadow-pink-500/20">
+              2
+            </div>
+            <div class="space-y-3 w-full">
+              <h2 class="text-xl font-bold text-white flex items-center justify-between">
+                <span>LANGKAH 2 — Pasang Library Baru</span>
+                <span class="bg-blue-500/10 text-blue-400 border border-blue-500/20 text-[10px] px-2.5 py-1 rounded-md font-semibold tracking-wider uppercase">Install</span>
+              </h2>
+              <ol class="list-decimal list-inside space-y-2.5 text-sm text-slate-300 pl-1">
+                <li>Masih di menu <span class="text-slate-100 font-medium">Libraries</span></li>
+                <li>Klik tombol: <span class="text-slate-100 font-medium bg-white/10 px-2 py-1 rounded">+ Add a library</span></li>
+                <li>
+                  Masukkan <span class="text-slate-100 font-medium">Script ID</span> berikut:
+                  <div class="mt-2 p-3 bg-black/40 border border-white/10 rounded-xl flex items-center justify-between gap-3 overflow-hidden shadow-inner">
+                    <code class="text-xs text-pink-300 font-mono break-all select-all pr-2">1atax9n3DszQyRqKq9c7TA3eb6C9tLwiclXnYVhcoe9UxMPQZPEcC0HzE</code>
+                    <span class="text-[10px] bg-white/10 text-slate-300 px-2 py-1 rounded shrink-0 select-none uppercase font-bold tracking-widest">Copy</span>
+                  </div>
+                </li>
+                <li>Klik <span class="text-slate-100 font-medium bg-white/10 px-2 py-1 rounded">Look up</span></li>
+              </ol>
+
+              <!-- PENTING Section Inside Langkah 2 -->
+              <div class="mt-4 p-4 rounded-2xl bg-amber-500/10 border border-amber-500/20 space-y-2">
+                <div class="flex items-center gap-2 text-amber-400 font-bold text-sm uppercase tracking-wider">
+                  <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                  </svg>
+                  <span>PENTING — IDENTIFIER WAJIB SAMA</span>
+                </div>
+                <p class="text-xs text-slate-300">
+                  Pada kolom <span class="font-semibold text-slate-100">Identifier</span>, isi dengan:
+                </p>
+                <div class="p-2.5 bg-amber-500/20 text-white rounded-xl text-center font-mono font-bold text-base tracking-wide border border-amber-500/30">
+                  iMersEngine
+                </div>
+                <ul class="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-2 text-xs text-amber-300/90 font-medium">
+                  <li class="flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span> Jangan diubah
+                  </li>
+                  <li class="flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span> Harus sama persis
+                  </li>
+                  <li class="flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span> Huruf besar kecil sesuai
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- LANGKAH 3 -->
+        <div class="imers-card glass-effect glass-card-hover p-6 rounded-3xl transition-all" data-block="card">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-pink-500 to-pink-600 flex items-center justify-center font-bold text-lg text-white shrink-0 shadow-lg shadow-pink-500/20">
+              3
+            </div>
+            <div class="space-y-3 w-full">
+              <h2 class="text-xl font-bold text-white flex items-center justify-between">
+                <span>LANGKAH 3 — Pilih Version &amp; Add</span>
+                <span class="bg-pink-500/10 text-pink-400 border border-pink-500/20 text-[10px] px-2.5 py-1 rounded-md font-semibold tracking-wider uppercase">Select</span>
+              </h2>
+              <ol class="list-decimal list-inside space-y-2 text-sm text-slate-300 pl-1">
+                <li>Pada bagian <span class="text-slate-100 font-medium">Version</span>, pilih versi terbaru</li>
+                <li>Klik tombol <span class="text-emerald-400 font-semibold bg-emerald-500/15 px-2 py-0.5 rounded">Add</span></li>
+              </ol>
+              
+              <div class="mt-3 flex items-center gap-2 text-xs text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 p-2.5 rounded-xl">
+                <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>Library baru berhasil dipasang</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- LANGKAH 4 -->
+        <div class="imers-card glass-effect glass-card-hover p-6 rounded-3xl transition-all" data-block="card">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-pink-500 to-pink-600 flex items-center justify-center font-bold text-lg text-white shrink-0 shadow-lg shadow-pink-500/20">
+              4
+            </div>
+            <div class="space-y-3 w-full">
+              <h2 class="text-xl font-bold text-white flex items-center justify-between">
+                <span>LANGKAH 4 — Update Deployment</span>
+                <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[10px] px-2.5 py-1 rounded-md font-semibold tracking-wider uppercase">Deploy</span>
+              </h2>
+              <ol class="list-decimal list-inside space-y-2 text-sm text-slate-300 pl-1">
+                <li>Klik tombol <span class="text-slate-100 font-semibold">Deploy</span></li>
+                <li>Pilih <span class="text-slate-100 font-medium bg-white/10 px-1.5 py-0.5 rounded">Manage Deployments</span></li>
+                <li>Edit deployment lama atau buat deployment baru</li>
+                <li>Pastikan menggunakan <span class="text-pink-300 font-medium">source terbaru</span></li>
+                <li>Klik <span class="text-emerald-400 font-bold bg-emerald-500/15 px-2.5 py-1 rounded">Deploy</span></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer Area Page 1 -->
+      <footer class="imers-block mt-10 border-t border-white/10 pt-4 flex items-center justify-between text-xs text-slate-400" data-block="footer">
+        <div>© iMersFireship Project</div>
+        <div class="font-mono">Page 1 of 2</div>
+      </footer>
+
+    </div>
+  </section>
+
+  <!-- PAGE 2 -->
+  <section class="break-after-page min-h-screen py-8 sm:py-16 flex flex-col justify-between relative z-10" data-block="page">
+    <div class="imers-container mx-auto max-w-[960px] w-full p-4 sm:p-8 flex-grow flex flex-col justify-between" role="document" aria-label="Page 2">
+
+      <!-- Main Block Area Page 2 -->
+      <main class="imers-block space-y-8 flex-grow flex flex-col justify-center" data-block="main">
+        
+        <!-- Header Status Banner -->
+        <div class="text-center space-y-3 py-6">
+          <div class="inline-flex items-center justify-center p-3 bg-emerald-500/20 border border-emerald-500/30 rounded-3xl text-emerald-400 mb-2 shadow-lg shadow-emerald-500/10">
+            <svg class="w-12 h-12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight bg-gradient-to-r from-emerald-400 via-teal-300 to-blue-400 bg-clip-text text-transparent">
+            Sistem Berhasil Di-Update!
+          </h2>
+          <p class="text-slate-300 max-w-md mx-auto text-sm sm:text-base">
+            Langkah instalasi selesai. Semua library telah diperbarui ke engine backend terbaru yang handal.
+          </p>
+        </div>
+
+        <!-- Bento Grid: Features & Troubleshooting -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          
+          <!-- Card: Fitur Baru -->
+          <div class="imers-card glass-effect p-6 sm:p-8 rounded-3xl flex flex-col justify-between border border-white/10" data-block="card">
+            <div>
+              <div class="flex items-center gap-3.5 mb-6">
+                <div class="p-2.5 bg-pink-500/20 text-pink-400 rounded-2xl">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-lg font-bold text-white">Fitur Baru Aktif</h3>
+                  <p class="text-xs text-slate-400">Aktif setelah update berhasil dilakukan</p>
+                </div>
+              </div>
+
+              <ul class="space-y-3.5">
+                <li class="flex items-center gap-3 text-sm text-slate-200">
+                  <span class="p-1 bg-emerald-500/20 text-emerald-400 rounded-lg shrink-0">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
+                  OTP Verification System
+                </li>
+                <li class="flex items-center gap-3 text-sm text-slate-200">
+                  <span class="p-1 bg-emerald-500/20 text-emerald-400 rounded-lg shrink-0">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
+                  Smart User Validation
+                </li>
+                <li class="flex items-center gap-3 text-sm text-slate-200">
+                  <span class="p-1 bg-emerald-500/20 text-emerald-400 rounded-lg shrink-0">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
+                  Anti Duplicate Access
+                </li>
+                <li class="flex items-center gap-3 text-sm text-slate-200">
+                  <span class="p-1 bg-emerald-500/20 text-emerald-400 rounded-lg shrink-0">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
+                  Security Upgrade
+                </li>
+                <li class="flex items-center gap-3 text-sm text-slate-200">
+                  <span class="p-1 bg-emerald-500/20 text-emerald-400 rounded-lg shrink-0">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
+                  Validation System V2
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Card: Troubleshooting -->
+          <div class="imers-card glass-effect p-6 sm:p-8 rounded-3xl flex flex-col justify-between border border-white/10" data-block="card">
+            <div>
+              <div class="flex items-center gap-3.5 mb-6">
+                <div class="p-2.5 bg-amber-500/20 text-amber-400 rounded-2xl">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-lg font-bold text-white">Jika Ada Error</h3>
+                  <p class="text-xs text-slate-400">Troubleshoot cepat kendala sistem</p>
+                </div>
+              </div>
+
+              <ul class="space-y-3">
+                <li class="flex items-center gap-3 text-sm text-slate-300">
+                  <span class="text-blue-400 shrink-0 font-bold font-mono">✔</span>
+                  Refresh Apps Script
+                </li>
+                <li class="flex items-center gap-3 text-sm text-slate-300">
+                  <span class="text-blue-400 shrink-0 font-bold font-mono">✔</span>
+                  Save ulang project
+                </li>
+                <li class="flex items-center gap-3 text-sm text-slate-300">
+                  <span class="text-blue-400 shrink-0 font-bold font-mono">✔</span>
+                  Redeploy ulang deployment
+                </li>
+                <li class="flex items-start gap-3 text-sm text-slate-300">
+                  <span class="text-blue-400 shrink-0 font-bold font-mono mt-0.5">✔</span>
+                  <span>Pastikan identifier tetap: <span class="text-pink-300 font-mono font-semibold">iMersEngine</span></span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Final Note Area -->
+        <div class="imers-block bg-gradient-to-r from-blue-500/10 to-pink-500/10 border border-white/10 p-5 rounded-3xl flex gap-3.5 items-center max-w-2xl mx-auto mt-4" data-block="decor">
+          <span class="p-2.5 bg-pink-500/20 text-pink-400 rounded-2xl shrink-0">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+            </svg>
+          </span>
+          <p class="text-xs sm:text-sm text-slate-200 leading-relaxed">
+            Setelah update selesai, sistem <span class="font-semibold text-pink-300">iMersFireship</span> Anda otomatis menggunakan <span class="font-bold text-white bg-white/10 px-1.5 py-0.5 rounded">engine terbaru V2</span>.
+          </p>
+        </div>
+
+      </main>
+
+      <!-- Footer Area Page 2 -->
+      <footer class="imers-block mt-10 border-t border-white/10 pt-4 flex items-center justify-between text-xs text-slate-400" data-block="footer">
+        <div>© iMersFireship Project</div>
+        <div class="font-mono">Page 2 of 2</div>
+      </footer>
+
+    </div>
+  </section>
+
+</body>
+</html>
